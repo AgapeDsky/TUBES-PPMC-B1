@@ -2,8 +2,11 @@
     Program Travelling Salesman Problem
     Kelompok : B1
     Nama Anggota ( NIM ) :
+        Nurhayati Marqoh Sirfefa (13217022)
         Agape D'sky (13219010)
-        .... isi
+        Richard (13219011)
+        Faris Jabar Nugrahadi (13219020)
+        Kelvin Angga Yumawan (13219025)
 
     Deskripsi Program :
     ................
@@ -28,7 +31,13 @@ typedef struct Data {
 /*
     Deklarasi fungsi-fungsi yang digunakan dalam program
 */
-
+void jarak_antarkota (double matrix[100][100], Data* data, int n){
+    for (int i=0; i<n; i++){
+        for (int j=0; j<n; j++){
+            matrix[i][j]= (distance(data[i].latitude, data[j].latitude, data[i].longitude, data[j].longitude));
+        }
+    }
+}
 /*
     main
 */
@@ -39,6 +48,7 @@ int main(){
     char content[1000];             //Variabel isi file keseluruhan
     char* token;                    //Variabel token untuk isi file
     Data data[100];                 //Array penyimpan informasi
+    double matriks[100][100];       //Matriks jarak antar kota
 
     //Buka file
     printf("Masukkan nama file input: ");
@@ -73,7 +83,7 @@ int main(){
             ++i;
         }
         fclose(stream);
-        
+        jarak_antarkota(matrix, data, i);
         /*
             File sudah kosong, seluruh informasi yang valid sudah masuk ke dalam array
             Array sudah bisa diproses untuk keperluan pengolahan data
