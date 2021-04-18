@@ -3,7 +3,7 @@
 * Kelompok          : B1
 * Hari dan Tanggal 	:
 * Asisten (NIM) 	: Joshua Adi Chandra (18317032)
-* Nama File 		:
+* Nama File 		: isValidKoor.c
 * Deskripsi 		:
 */
 
