@@ -48,7 +48,6 @@ int main(){
     char content[1000];             //Variabel isi file keseluruhan
     char* token;                    //Variabel token untuk isi file
     Data data[100];                 //Array penyimpan informasi
-    double matriks[100][100];       //Matriks jarak antar kota
 
     //Buka file
     printf("Masukkan nama file input: ");
@@ -83,7 +82,6 @@ int main(){
             ++i;
         }
         fclose(stream);
-        jarak_antarkota(matrix, data, i);
         /*
             File sudah kosong, seluruh informasi yang valid sudah masuk ke dalam array
             Array sudah bisa diproses untuk keperluan pengolahan data
