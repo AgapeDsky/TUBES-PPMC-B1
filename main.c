@@ -29,7 +29,6 @@ typedef struct Data {
     Deklarasi fungsi-fungsi yang digunakan dalam program
 */
 
-
 /*
     main
 */
@@ -38,7 +37,7 @@ int main(){
     FILE* stream;                   //Variabel untuk file
     char namafile[1000];            //Nama file input
     char content[1000];             //Variabel isi file keseluruhan
-    char* token;                     //Variabel token untuk isi file
+    char* token;                    //Variabel token untuk isi file
     Data data[100];                 //Array penyimpan informasi
 
     //Buka file
@@ -53,32 +52,27 @@ int main(){
     else {                          //Kondisi tidak kosong
         int i = 0;                  //Inisialisasi loop
         char* token_2;              //Variabel untuk validasi token
-        int token_int;              //Variabel konversi token ke integer
+        double token_float;              //Variabel konversi token ke integer
         while(fgets(content, 1000, stream) != NULL) {
             //Ambil informasi nama kota
             token = strtok(content, ",");
             strcpy(data[i].kota, token);
             //Ambil informasi latitude
             token = strtok(NULL, ",");
-            token_int = atoi(token);
-            itoa(token_int, token_2, 10);
-            if(!strcmp(token, token_2)) { //Periksa validitas latitude
-                printf("Error: file invalid!");
-                return 0;
-            }
-            data[i].latitude = token_int;
+            token_float = atof(token);
+            //Validasi latitude
+            //...
+            data[i].latitude = token_float;
             //Ambil informasi longitude
-            token = strtok(NULL, ",");
-            token_int = atoi(token);
-            itoa(token_int, token_2, 10);
-            if(!strcmp(token, token_2)) { //Periksa validitas latitude
-                printf("Error: file invalid!");
-                return 0;
-            }
-            data[i].longitude = token_int;
+            token = strtok(NULL, "\n");
+            token_float = atof(token);
+            //Validasi longitude
+            //...
+            data[i].longitude = token_float;
             
             ++i;
         }
+        fclose(stream);
         
         /*
             File sudah kosong, seluruh informasi yang valid sudah masuk ke dalam array
@@ -86,8 +80,6 @@ int main(){
         */
 
     }
-
     //Return value
     return 0;
 }
-
