@@ -9,7 +9,7 @@
 #include "validation_kota.h"
 
 bool isalphabet(char c){
-    return ((c >= 'a' && c <= 'z') || (c <= 'A' && c >= 'Z') || (c == NULL));
+    return ((c >= 'a' && c <= 'z') || (c <= 'A' && c >= 'Z') || (&c == NULL));
 }
 
 bool isvalid(char* kota){
