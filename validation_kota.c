@@ -1,11 +1,3 @@
-/** EL2208 Praktikum Pemecahan Masalah dengan C 2020/2021
-* MODUL 9 – TUGAS BESAR
-* Kelompok          : B1
-* Hari dan Tanggal 	:
-* Asisten (NIM) 	: Joshua Adi Chandra (18317032)
-* Nama File 		: validation_kota.c
-* Deskripsi 		:
-*/
 #include "validation_kota.h"
 
 bool isalphabet(char c){

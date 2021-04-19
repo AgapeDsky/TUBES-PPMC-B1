@@ -1,4 +1,7 @@
 #include "math.h"
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 /**
     *Fungsi untuk mengecek apakah format latitude dan longitude valid.
